@@ -1,0 +1,13 @@
+---
+- hosts: localhost  # Replace with the name of your Ansible inventory group or specific host
+  become: true  # Run tasks with sudo
+
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Git
+      apt:
+        name: git
+        state: present
